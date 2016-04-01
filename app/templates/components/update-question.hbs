@@ -1,0 +1,13 @@
+{{#if isSelected}}
+  <form class="">
+    <label for="author">Author :</label>
+    {{input value=question.author}}
+    <label for="question">Question :</label>
+    {{input value=question.name}}
+    <label for="notes">Notes</label>
+    {{input value=question.notes}}
+    <button type="button" {{action 'submitUpdate' question}}>Submit</button>
+  </form>
+{{else}}
+  <button type="button" {{action 'showForm'}}>Edit Question</button>
+{{/if}}
