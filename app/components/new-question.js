@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     submitQuestion(){
       var params = {
         author: this.get('author')? this.get('author') : 'anonymous',
-        content: this.get('content')? this.get('content'): 'Essere o non Essere?',
+        name: this.get('name')? this.get('name'): 'Essere o non Essere?',
         date: new Date(),
         notes: 'answer asap please'
       };
