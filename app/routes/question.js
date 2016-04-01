@@ -7,7 +7,12 @@ export default Ember.Route.extend({
   actions: {
     deleteQuestion(question){
       if(confirm('are you sure?')){
-        question.destroyRecord();
+        var deleteAllAnswers = question.get('answers').map(function(answer){
+          return answer.destroyRecord();
+        });
+        Ember.RSVP.all(deleteAllAnswers).then(function(){
+          return question.destroyRecord();
+        });
         this.transitionTo('index');
       }
     },
@@ -18,6 +23,16 @@ export default Ember.Route.extend({
         }
       });
       question.save();
+      this.transitionTo('question', question.id);
+    },
+    addAnswer(params){
+      console.log(params);
+      var newAnswer = this.store.createRecord('answer', params);
+      var question = params.question;
+      question.get('answers').addObject(newAnswer);
+      newAnswer.save().then(function(){
+        return question.save();
+      });
       this.transitionTo('question', question.id);
     }
   }

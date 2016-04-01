@@ -6,17 +6,17 @@ export default Ember.Component.extend({
     showForm(){
       this.set('isSelected', true);
     },
-    submitQuestion(){
+    submitAnswer(question){
       var params = {
         author: this.get('author')? this.get('author') : 'anonymous',
-        name: this.get('name')? this.get('name'): 'Essere o non Essere?',
+        content: this.get('content')? this.get('content'): 'Try using a Banana',
         date: new Date(),
-        notes: 'answer asap please'
+        question: question
       };
       this.set('isSelected', false);
       this.set('author', '');
-      this.set('name', '');
-      this.sendAction('sendQuestion', params);
+      this.set('content', '');
+      this.sendAction('sendAnswer', params);
     }
   }
 });
