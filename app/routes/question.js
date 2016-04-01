@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params){
-    return this.store.findRecord('question', params.question_id)
+    return this.store.findRecord('question', params.question_id);
   },
   actions: {
     deleteQuestion(question){
@@ -44,7 +44,7 @@ export default Ember.Route.extend({
       var karma = answer.get('karma');
       answer.set('karma', karma - 1);
       answer.save();
-      this.transitionTo('question') //need to find a way to access the ID, possibly need to send params up
+      this.transitionTo('question'); //need to find a way to access the ID, possibly need to send params up
     }
   }
 });

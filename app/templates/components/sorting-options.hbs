@@ -1,1 +1,6 @@
-{{yield}}
+<h4>Sort by</h4>
+{{#if isSelected}}
+  <button type="button" {{action 'toggleDate'}}>Most Recent</button>
+{{else}}
+  <button type="button" {{action 'toggleKarma'}}>Highest Karma</button>
+{{/if}}
