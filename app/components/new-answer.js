@@ -11,6 +11,7 @@ export default Ember.Component.extend({
         author: this.get('author')? this.get('author') : 'anonymous',
         content: this.get('content')? this.get('content'): 'Try using a Banana',
         date: new Date(),
+        karma: 0,
         question: question
       };
       this.set('isSelected', false);

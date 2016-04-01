@@ -33,6 +33,18 @@ export default Ember.Route.extend({
         return question.save();
       });
       this.transitionTo('question', question.id);
+    },
+    addUpvote(answer){
+      var karma = answer.get('karma');
+      answer.set('karma', karma + 1);
+      answer.save();
+      this.transitionTo('question');
+    },
+    addDownvote(answer){
+      var karma = answer.get('karma');
+      answer.set('karma', karma - 1);
+      answer.save();
+      this.transitionTo('question') //need to find a way to access the ID, possibly need to send params up
     }
   }
 });

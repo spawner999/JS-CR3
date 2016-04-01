@@ -1,4 +1,7 @@
 <div class="answer">
-    <h3>{{answer.author}}</h3>
-    <p>{{answer.content}}</p>
+  <h3>{{answer.author}} said:</h3>
+  <p>{{answer.content}}</p>
+  <p>Karma: {{answer.karma}}</p>
+  <button type="button" {{action 'upVote' answer}}>Upvote</button>
+  <button type="button" {{action 'downVote' answer}}>Downvote</button>
 </div>

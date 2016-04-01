@@ -1,7 +1,7 @@
 <h2>{{model.name}}</h2>
-<h3>{{model.author}}</h3>
+<h3>by: {{model.author}}</h3>
 <p>{{model.notes}}</p>
 <button type="button" {{action 'deleteQuestion' model}}>Delete this Question</button>
 {{update-question question=model sendUpdate="updateQuestion"}}
 {{new-answer question=model sendAnswer="addAnswer"}}
-{{answer-list answers=model.answers}}
+{{answer-list answers=model.answers sendUpvote="addUpvote" sendDownvote="addDownvote"}}
