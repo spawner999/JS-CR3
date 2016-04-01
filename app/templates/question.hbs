@@ -4,3 +4,4 @@
 <button type="button" {{action 'deleteQuestion' model}}>Delete this Question</button>
 {{update-question question=model sendUpdate="updateQuestion"}}
 {{new-answer question=model sendAnswer="addAnswer"}}
+{{answer-list answers=model.answers}}
