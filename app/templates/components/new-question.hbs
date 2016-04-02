@@ -4,6 +4,16 @@
     {{input value=author}}
     <label for="author">Question: </label>
     {{input value=name}}
+    <label for="author">Notes: </label>
+    {{input value=notes}}
+    <br>
+    <label for="food">food</label>
+    {{input type="checkbox" checked=food}}
+    <label for="food">politics</label>
+    {{input type="checkbox" checked=politics}}
+    <label for="food">movies</label>
+    {{input type="checkbox" checked=movies}}
+    <br>
     <button type="button" {{action 'submitQuestion'}}>Submit</button>
   </form>
 {{else}}
